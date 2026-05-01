@@ -1,17 +1,17 @@
 import { Star } from "lucide-react";
 
 const reviews = [
-  { name: "Yusuf A.", text: "Alhamdulillah, an unforgettable Umrah. Everything was arranged seamlessly from London to Makkah." },
-  { name: "Fatima R.", text: "The team's care and attention made our Hajj truly spiritual. Hotels were minutes from the Haram." },
-  { name: "Ibrahim K.", text: "Excellent service and honest pricing. Will travel with Abidoune again, in sha Allah." },
+  { name: "Yusuf A.", text: "Alhamdulillah, una Umrah indimenticabile. Tutto organizzato perfettamente fino a Makkah." },
+  { name: "Fatima R.", text: "L'attenzione del team ha reso il nostro Hajj davvero spirituale. Hotel a pochi passi dal Haram." },
+  { name: "Ibrahim K.", text: "Servizio eccellente e prezzi onesti. Viaggerò ancora con Abidoune, in sha Allah." },
 ];
 
 export const Testimonials = () => (
   <section className="py-20 bg-secondary">
     <div className="container">
       <div className="text-center max-w-2xl mx-auto mb-14">
-        <p className="text-gold uppercase tracking-[0.25em] text-sm mb-3">Pilgrim Stories</p>
-        <h2 className="text-3xl md:text-5xl font-bold">Trusted by Thousands of Pilgrims</h2>
+        <p className="text-gold uppercase tracking-[0.25em] text-sm mb-3">Storie di Pellegrini</p>
+        <h2 className="text-3xl md:text-5xl font-bold">Scelti da Migliaia di Pellegrini</h2>
       </div>
       <div className="grid md:grid-cols-3 gap-6">
         {reviews.map((r) => (
