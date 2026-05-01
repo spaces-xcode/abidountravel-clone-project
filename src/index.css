@@ -9,34 +9,47 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 0 0% 8%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 0 0% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 8%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Brand: deep black */
+    --primary: 0 0% 8%;
+    --primary-foreground: 45 75% 88%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Brand: gold */
+    --gold: 41 65% 52%;
+    --gold-foreground: 0 0% 8%;
+    --gold-light: 45 80% 75%;
+    --gold-dark: 38 70% 38%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --secondary: 45 30% 96%;
+    --secondary-foreground: 0 0% 8%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 40 20% 96%;
+    --muted-foreground: 0 0% 35%;
+
+    --accent: 41 65% 52%;
+    --accent-foreground: 0 0% 8%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 40 20% 88%;
+    --input: 40 20% 88%;
+    --ring: 41 65% 52%;
 
-    --radius: 0.5rem;
+    --radius: 0.625rem;
+
+    --gradient-gold: linear-gradient(135deg, hsl(38 70% 45%) 0%, hsl(45 85% 65%) 50%, hsl(38 70% 45%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 8% / 0.55) 0%, hsl(0 0% 8% / 0.75) 100%);
+    --gradient-dark: linear-gradient(135deg, hsl(0 0% 6%) 0%, hsl(0 0% 14%) 100%);
+    --shadow-gold: 0 10px 40px -10px hsl(41 65% 52% / 0.45);
+    --shadow-elegant: 0 20px 50px -20px hsl(0 0% 0% / 0.35);
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +114,22 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .text-gold-gradient {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .border-gold-gradient {
+    border-image: var(--gradient-gold) 1;
   }
 }
