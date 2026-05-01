@@ -1,20 +1,20 @@
 import { Plane, BedDouble, FileCheck2, Bus, ShieldCheck, HeartHandshake } from "lucide-react";
 
 const services = [
-  { icon: Plane, title: "Flights", desc: "Direct & connecting flights with leading airlines from UK airports." },
-  { icon: FileCheck2, title: "Visa Processing", desc: "Fast, hassle-free Saudi visa applications managed for you." },
-  { icon: BedDouble, title: "Hotels", desc: "Hand-picked 3, 4 & 5 star hotels closest to the Haram." },
-  { icon: Bus, title: "Transport", desc: "Comfortable transfers between airport, Makkah & Madinah." },
-  { icon: ShieldCheck, title: "Trusted & Accredited", desc: "IATA accredited & approved by the Ministry of Hajj." },
-  { icon: HeartHandshake, title: "24/7 Support", desc: "Dedicated guidance from booking until your safe return." },
+  { icon: Plane, title: "Voli", desc: "Voli diretti e con scalo con le migliori compagnie aeree." },
+  { icon: FileCheck2, title: "Pratica Visto", desc: "Richieste di visto saudita rapide e senza pensieri." },
+  { icon: BedDouble, title: "Hotel", desc: "Hotel 3, 4 e 5 stelle selezionati, più vicini al Haram." },
+  { icon: Bus, title: "Trasporti", desc: "Transfer comodi tra aeroporto, Makkah e Madinah." },
+  { icon: ShieldCheck, title: "Affidabili e Accreditati", desc: "Accreditati IATA e approvati dal Ministero dell'Hajj." },
+  { icon: HeartHandshake, title: "Supporto 24/7", desc: "Assistenza dedicata dalla prenotazione al rientro." },
 ];
 
 export const Services = () => (
   <section className="py-20 bg-gradient-dark text-primary-foreground">
     <div className="container">
       <div className="text-center max-w-2xl mx-auto mb-14">
-        <p className="text-gold uppercase tracking-[0.25em] text-sm mb-3">Why Abidoune</p>
-        <h2 className="text-3xl md:text-5xl font-bold mb-4">A Sacred Journey, Perfectly Arranged</h2>
+        <p className="text-gold uppercase tracking-[0.25em] text-sm mb-3">Perché Abidoune</p>
+        <h2 className="text-3xl md:text-5xl font-bold mb-4">Un Viaggio Sacro, Organizzato alla Perfezione</h2>
       </div>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {services.map(({ icon: Icon, title, desc }) => (

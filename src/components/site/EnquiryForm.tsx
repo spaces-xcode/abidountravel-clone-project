@@ -10,8 +10,8 @@ export const EnquiryForm = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
-      title: "Enquiry received",
-      description: "Our team will contact you shortly with the best prices.",
+      title: "Richiesta ricevuta",
+      description: "Il nostro team ti contatterà a breve con le migliori offerte.",
     });
   };
 
@@ -27,7 +27,7 @@ export const EnquiryForm = () => {
                 : "bg-background border border-border text-foreground"
             }`}
           >
-            Umrah Enquiry
+            Richiesta Umrah
           </button>
           <button
             onClick={() => setTab("hajj")}
@@ -37,28 +37,28 @@ export const EnquiryForm = () => {
                 : "bg-background border border-border text-foreground"
             }`}
           >
-            Hajj Enquiry
+            Richiesta Hajj
           </button>
         </div>
         <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 items-end">
           <div>
-            <Label htmlFor="name">Lead Passenger</Label>
-            <Input id="name" placeholder="Full name" required className="bg-background" />
+            <Label htmlFor="name">Passeggero principale</Label>
+            <Input id="name" placeholder="Nome completo" required className="bg-background" />
           </div>
           <div>
-            <Label htmlFor="email">Email Address</Label>
-            <Input id="email" type="email" placeholder="you@example.com" required className="bg-background" />
+            <Label htmlFor="email">Indirizzo Email</Label>
+            <Input id="email" type="email" placeholder="tu@esempio.com" required className="bg-background" />
           </div>
           <div>
-            <Label htmlFor="phone">Contact No</Label>
-            <Input id="phone" placeholder="+44..." required className="bg-background" />
+            <Label htmlFor="phone">Telefono</Label>
+            <Input id="phone" placeholder="+39..." required className="bg-background" />
           </div>
           <div>
-            <Label htmlFor="adult">Adults</Label>
+            <Label htmlFor="adult">Adulti</Label>
             <Input id="adult" type="number" min={1} defaultValue={1} className="bg-background" />
           </div>
           <Button type="submit" size="lg" className="bg-gradient-gold text-gold-foreground hover:opacity-90 shadow-gold h-11">
-            Get Best {tab === "umrah" ? "Umrah" : "Hajj"} Price
+            Richiedi Miglior Prezzo {tab === "umrah" ? "Umrah" : "Hajj"}
           </Button>
         </form>
       </div>
