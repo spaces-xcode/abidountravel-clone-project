@@ -1,67 +1,49 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { toast } from "@/hooks/use-toast";
+import { Apple, Star, Users, BookOpenCheck } from "lucide-react";
 
-export const EnquiryForm = () => {
-  const [tab, setTab] = useState<"umrah" | "hajj">("umrah");
+const stats = [
+  { icon: Star, value: "5.0", label: "App Store rating" },
+  { icon: BookOpenCheck, value: "60", label: "Ahzab per khatma" },
+  { icon: Users, value: "∞", label: "Participants per khatma" },
+];
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Richiesta ricevuta",
-      description: "Il nostro team ti contatterà a breve con le migliori offerte.",
-    });
-  };
+export const Download = () => (
+  <section id="download" className="relative overflow-hidden bg-gradient-dark border-y border-border">
+    <div className="container py-20 text-center">
+      <p className="text-gold uppercase tracking-[0.25em] text-sm mb-3">Available now</p>
+      <h2 className="font-display text-3xl md:text-5xl font-bold mb-5 text-foreground">
+        Start your <span className="text-gold-gradient">first khatma</span> today
+      </h2>
+      <p className="max-w-xl mx-auto text-muted-foreground mb-10">
+        Free on iPhone and iPad. Designed by Agility Concepts. May Allah accept it from you.
+      </p>
 
-  return (
-    <section className="bg-secondary border-y border-border">
-      <div className="container py-12">
-        <div className="flex gap-3 mb-6">
-          <button
-            onClick={() => setTab("umrah")}
-            className={`px-6 py-2.5 rounded-full font-medium transition ${
-              tab === "umrah"
-                ? "bg-gradient-gold text-gold-foreground shadow-gold"
-                : "bg-background border border-border text-foreground"
-            }`}
-          >
-            Richiesta Umrah
-          </button>
-          <button
-            onClick={() => setTab("hajj")}
-            className={`px-6 py-2.5 rounded-full font-medium transition ${
-              tab === "hajj"
-                ? "bg-gradient-gold text-gold-foreground shadow-gold"
-                : "bg-background border border-border text-foreground"
-            }`}
-          >
-            Richiesta Hajj
-          </button>
-        </div>
-        <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 items-end">
-          <div>
-            <Label htmlFor="name">Passeggero principale</Label>
-            <Input id="name" placeholder="Nome completo" required className="bg-background" />
+      <div className="flex flex-wrap gap-4 justify-center mb-12">
+        <a
+          href="https://apps.apple.com/app/id6446455582"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-3 px-7 py-4 rounded-xl bg-gradient-gold text-gold-foreground font-semibold shadow-gold hover:opacity-90 transition"
+        >
+          <Apple className="h-6 w-6" />
+          <div className="text-left leading-tight">
+            <div className="text-[10px] uppercase tracking-wider opacity-80">Download on the</div>
+            <div className="text-base">App Store</div>
           </div>
-          <div>
-            <Label htmlFor="email">Indirizzo Email</Label>
-            <Input id="email" type="email" placeholder="tu@esempio.com" required className="bg-background" />
-          </div>
-          <div>
-            <Label htmlFor="phone">Telefono</Label>
-            <Input id="phone" placeholder="+39..." required className="bg-background" />
-          </div>
-          <div>
-            <Label htmlFor="adult">Adulti</Label>
-            <Input id="adult" type="number" min={1} defaultValue={1} className="bg-background" />
-          </div>
-          <Button type="submit" size="lg" className="bg-gradient-gold text-gold-foreground hover:opacity-90 shadow-gold h-11">
-            Richiedi Miglior Prezzo {tab === "umrah" ? "Umrah" : "Hajj"}
-          </Button>
-        </form>
+        </a>
       </div>
-    </section>
-  );
-};
+
+      <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto">
+        {stats.map(({ icon: Icon, value, label }) => (
+          <div key={label} className="rounded-xl border border-gold/20 bg-card/50 backdrop-blur p-5">
+            <Icon className="h-5 w-5 text-gold mx-auto mb-2" />
+            <div className="font-display text-2xl font-bold text-gold">{value}</div>
+            <div className="text-xs text-muted-foreground mt-1">{label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+// Backwards-compat export to avoid touching the page import
+export { Download as EnquiryForm };
